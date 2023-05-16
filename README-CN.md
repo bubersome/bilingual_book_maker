@@ -43,7 +43,7 @@ bilingual_book_maker 是一个 AI 翻译工具，使用 ChatGPT 帮助用户制�
    如果您不需要设置 `system` 角色，可以这样：`--prompt "Translate {text} to {language}"` 或者 `--prompt prompt_template_sample.txt`（示例文本文件可以在 [./prompt_template_sample.txt](./prompt_template_sample.txt) 找到）。
    如果您需要设置 `system` 角色，可以使用以下方式配置：`--prompt '{"user":"Translate {text} to {language}", "system": "You are a professional translator."}'`，或者 `--prompt prompt_template_sample.json`（示例 JSON 文件可以在 [./prompt_template_sample.json](./prompt_template_sample.json) 找到）。
    你也可以用环境以下环境变量来配置 `system` 和 `user` 角色 prompt：`BBM_CHATGPTAPI_USER_MSG_TEMPLATE` 和 `BBM_CHATGPTAPI_SYS_MSG`。
-该参数可以是提示模板字符串，也可以是模板 `.txt` 文件的路径。
+   该参数可以是提示模板字符串，也可以是模板 `.txt` 文件的路径。
 - 使用`--batch_size` 参数，指定批量翻译的行数(默认行数为10，目前只对txt生效)
 
 ### 示范用例
@@ -61,10 +61,10 @@ python3 make_book.py --book_name test_books/animal_farm.epub --openai_key ${open
 export OPENAI_API_KEY=${your_api_key}
 
 # 或使用 gpt3 模型
-python3 make_book.py --book_name test_books/animal_farm.epub --model gpt3 --language ja
+python3 make_book.py --book_name test_books/animal_farm.epub --model gpt3 --language zh-hans
 
 # Use the DeepL model with Japanese
-python3 make_book.py --book_name test_books/animal_farm.epub --model deepl --deepl_key ${deepl_key} --language ja
+python3 make_book.py --book_name test_books/animal_farm.epub --model deepl --deepl_key ${deepl_key} --language zh-hans
 
 # Use the Claude model with Japanese
 python3 make_book.py --book_name test_books/animal_farm.epub --model claude --claude_key ${claude_key} --language ja
